@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'app/navbar.html' %}
+
+<div class="container" id="header">
+    <h1>About Us</h1>
+</div>
+<div class="row">
+    <div class="imgcontainer">
+        <img src="https://media0.giphy.com/media/YoqlfrEXQ2yyCMbH10/giphy.gif" alt="animated house gif">
+    </div>
+    <div class="text" width="100" height="150">
+        HomeFi is (potentially) an Artifical Intelligence real estate 
+        search to help you find your perfect home. 
+        Features coming to the site: swiping-style house search, 3D interior/exterior walkthrough and more.
+
+        <div class="buttons" style="margin-top: 15px;">
+            <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
+        </div>
+    </div>
+</div>
+
+<style>
+body {
+    background-color: #f4a574;
+    font-family: monospace;
+}
+
+#header {
+    margin-top: 4%;
+    margin-left: 25%;
+}
+
+.imgcontainer {
+    margin-left: 25%;
+    margin-top: 4%;
+}
+
+.text {
+    /* border: 2px transparent; */
+    width: 450px;
+    font-family: monospace;
+    margin-top: 4%;
+    margin-left: 4%;
+    /* white-space: nowrap;
+    overflow: scroll;
+    text-overflow:inherit; */
+}
+
+</style>
+{% endblock %}
