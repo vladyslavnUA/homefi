@@ -15,9 +15,13 @@
             <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
             <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'about' %}">About</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="{% url 'new_listing' %}">Sell</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                {% if not user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'users:login' %}">Login</a>
+                {% else %}
+                    <a class="dropdown-item" href="{% url 'users:logout' %}">Logout</a>
+                {% endif %}
             </div>
             </li>
         </ul>
